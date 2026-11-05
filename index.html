@@ -666,9 +666,13 @@
     }
 
     @media(max-width: 560px) {
-      .brand-name { font-size: 17px; }
-      .brand-mark { width: 40px; height: 40px; }
-      .navbar > .btn { padding: 11px 15px; font-size: 12px; }
+      .navbar { gap: 12px; }
+      .brand { min-width: 0; gap: 8px; }
+      .brand-name { font-size: 15px; white-space: nowrap; }
+      .brand-sub { display: none; }
+      .brand-mark { width: 36px; height: 36px; font-size: 20px; }
+      .navbar > .btn { padding: 9px 12px; font-size: 12px; white-space: nowrap; }
+      .cart-link-view { display: none; }
       .products { grid-template-columns: 1fr; gap: 18px; }
       .product-image { height: 235px; }
       .product-bottom { align-items: flex-start; flex-direction: column; }
@@ -677,8 +681,10 @@
       .story-content h2 { font-size: 34px; }
       .footer-grid { flex-direction: column; align-items: flex-start; }
       .cart-panel { padding: 22px 18px; }
+      .cart-section { scroll-margin-top: 88px; }
       .cart-row { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
-      .cart-line-total { grid-column: 2; }
+      .cart-line-total { grid-column: 1 / -1; }
+      .cart-actions > .btn { flex: 1 1 100%; }
     }
   </style>
 </head>
@@ -706,7 +712,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="btn btn-primary" href="#cart" aria-label="View shopping cart">Cart <span id="cart-count">0</span> · View</a>
+      <a class="btn btn-primary" href="#cart" aria-label="View shopping cart">Cart <span id="cart-count">0</span> <span class="cart-link-view">· View</span></a>
     </div>
   </header>
 
@@ -814,8 +820,8 @@
           <article class="product-card">
             <div class="product-image">
               <img
-                src="images/kiwi-grade-c.jpg"
-                alt="Fresh red kiwi fruit, sliced"
+                src="images/kiwi-grade-a.jpg"
+                alt="Fresh green kiwi fruit, sliced"
                 loading="lazy"
               >
               <span class="product-tag">Everyday goodness</span>
